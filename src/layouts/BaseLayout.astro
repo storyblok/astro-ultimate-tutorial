@@ -1,3 +1,7 @@
+---
+import Header from '../components/Header.astro'
+---
+
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
@@ -5,7 +9,8 @@
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
     <title>@storyblok/astro</title>
   </head>
-  <body class='container mx-auto'>
+  <body class='mx-auto'>
+    <Header />
     <slot />
   </body>
 </html>
