@@ -8,12 +8,12 @@ You can switch between the different branches of this repository; there is one b
 
 ### Part 1
  - Tutorial: [Add a headless CMS to Astro in 5 minutes](https://www.storyblok.com/tp/add-a-headless-cms-to-astro-in-5-minutes)
- - Live demo: [View on Netlify](#)
+ - Live demo: [View on Netlify](https://part-1--storyblok-astro-ultimate-tutorial.netlify.app/)
  - Branch: [part-1](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-1)
  - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/166651)
 
 ### Part 2
  - Tutorial: [Render Storyblok Stories Dynamically in Astro](https://www.storyblok.com/tp/render-storyblok-stories-dynamically-in-astro)
- - Live demo: [View on Netlify](#)
+ - Live demo: [View on Netlify](https://part-2--storyblok-astro-ultimate-tutorial.netlify.app/)
  - Branch: [part-2](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-2)
  - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/166652)
