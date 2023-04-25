@@ -9,14 +9,12 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "@astrojs/tailwind": "^3.1.1",
-    "astro": "^2.3.0",
-    "tailwindcss": "^3.3.1"
-  },
   "devDependencies": {
-    "@storyblok/astro": "^2.1.0",
-    "@vitejs/plugin-basic-ssl": "^1.0.1",
-    "vite": "^4.3.0"
+    "@storyblok/astro": "^2.2.0",
+    "astro": "^2.3.0",
+    "@astrojs/tailwind": "^3.1.1",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.3.0",
+    "@vitejs/plugin-basic-ssl": "^1.0.1"
   }
 }
