@@ -10,6 +10,9 @@ export default defineConfig({
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
+      apiOptions: {
+        region: "us",
+      },
       components: {
         page: 'storyblok/Page',
         feature: 'storyblok/Feature',
