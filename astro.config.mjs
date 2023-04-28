@@ -12,7 +12,7 @@ export default defineConfig({
       //accessToken: env.STORYBLOK_TOKEN,
       accessToken: 'W1vLyxT5rQ15jBpANjnv0gtt',
       apiOptions: {
-        region: 'eu',
+        region: '',
       },
       components: {
         page: 'storyblok/Page',
