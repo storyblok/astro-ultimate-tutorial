@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@storyblok/astro": "^2.2.0",
+    "@storyblok/astro": "^2.2.1",
     "astro": "^2.3.2",
     "@astrojs/tailwind": "^3.1.1",
     "tailwindcss": "^3.3.1",
