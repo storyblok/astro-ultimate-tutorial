@@ -21,11 +21,11 @@ You can switch between the different branches of this repository; there is one b
 ### Part 3
  - Tutorial: [Create Dynamic Menus in Storyblok and Astro](https://www.storyblok.com/tp/create-dynamic-menus-in-storyblok-and-astro)
  - Live demo: [View on Netlify](https://part-3--storyblok-astro-ultimate-tutorial.netlify.app/)
- - Branch: [part-2](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-3)
+ - Branch: [part-3](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-3)
  - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/168925)
 
 ### Part 4
  - Tutorial: [Create Custom Components in Storyblok and Astro](https://www.storyblok.com/tp/create-custom-components-in-storyblok-and-astro)
  - Live demo: [View on Netlify](https://part-4--storyblok-astro-ultimate-tutorial.netlify.app/)
- - Branch: [part-2](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-4)
+ - Branch: [part-4](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-4)
  - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/166654)
