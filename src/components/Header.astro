@@ -18,7 +18,7 @@ const headerMenu = data?.story?.content?.header_menu
         {
           headerMenu.map((menu) => (
             <li>
-              <a href={menu.link.cached_url} class="hover:text-[#50b0ae]">
+              <a href={`/${menu.link.cached_url}`} class="hover:text-[#50b0ae]">
                 {menu.link.story.name}
               </a>
             </li>
