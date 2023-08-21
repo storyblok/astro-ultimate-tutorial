@@ -24,11 +24,11 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 
 const storyblokApi = useStoryblokApi()
-
 const { data } = await storyblokApi.get(
   `cdn/stories/${slug === undefined ? 'home' : slug}`,
   {
     version: 'draft',
+    resolve_relations: ['popular-articles.articles'],
   }
 )
 
