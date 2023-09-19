@@ -23,7 +23,7 @@ export async function getStaticPaths() {
       languages.forEach((lang) => {
         langSwitch = {
           ...langSwitch,
-          [lang]: lang === 'en' ? `/${slug}` : `/${lang}/${slug ?? ''}`,
+          [lang]: lang === 'en' ? `/${slug ?? ''}` : `/${lang}/${slug ?? ''}`,
         }
       })
       paths.push({
@@ -47,7 +47,6 @@ const { data } = await storyblokApi.get(
     language,
   }
 )
-
 const story = data.story
 ---
 
