@@ -1,40 +1,56 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro'
+// @ts-ignore
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
-
+import { languages } from '../utils/langs'
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi()
-
   const { data } = await storyblokApi.get('cdn/links', {
     version: 'draft',
   })
   let links = data.links
   links = Object.values(links)
-
-  return links.map((link) => {
-    return {
-      params: {
-        slug: link.slug === 'home' ? undefined : link.slug,
-      },
-    }
+  let paths = []
+  links.forEach((link: { slug: string }) => {
+    languages.forEach((language) => {
+      //This slug will be used for fetching data from storyblok
+      let slug = link.slug === 'home' ? undefined : link.slug
+      //This will be used for generating all the urls for astro
+      let full_url = language === 'en' ? slug : `${language}/${slug ?? ''}`
+      //This will let us change the url for diffrent versions
+      let langSwitch = {}
+      languages.forEach((lang) => {
+        langSwitch = {
+          ...langSwitch,
+          [lang]: lang === 'en' ? `/${slug}` : `/${lang}/${slug ?? ''}`,
+        }
+      })
+      paths.push({
+        props: { language, slug, langSwitch },
+        params: {
+          slug: full_url,
+        },
+      })
+    })
   })
+  return paths
 }
 
-const { slug } = Astro.params
-
+const { slug, language, langSwitch } = Astro.props
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get(
   `cdn/stories/${slug === undefined ? 'home' : slug}`,
   {
     version: 'draft',
     resolve_relations: ['popular-articles.articles'],
+    language,
   }
 )
 
 const story = data.story
 ---
 
-<BaseLayout>
-  <StoryblokComponent blok={story.content} />
+<BaseLayout langSwitch={langSwitch} language={language}>
+  <StoryblokComponent language={language} blok={story.content} />
 </BaseLayout>

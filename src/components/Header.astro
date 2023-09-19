@@ -1,16 +1,39 @@
-<header class='w-full h-24 bg-[#f7f6fd]'>
-  <div class='container h-full mx-auto flex items-center justify-between'>
-    <a href='/'>
-      <h1 class='text-[#50b0ae] text-3xl font-bold'>Storyblok Astro</h1>
+---
+import { languages } from '../utils/langs'
+const { language, langSwitch } = Astro.props
+function getNavLink(slug: string) {
+  return language === 'en' ? slug : `/${language}${slug}`
+}
+---
+
+<header class="w-full h-24 bg-[#f7f6fd]">
+  <div class="container h-full mx-auto flex items-center justify-between">
+    <a href={getNavLink('/')}>
+      <h1 class="text-[#50b0ae] text-3xl font-bold">Storyblok Astro</h1>
     </a>
     <nav>
-      <ul class='flex space-x-8 text-lg font-bold'>
+      <ul class="flex space-x-8 text-lg font-bold">
         <li>
-          <a href='/blog' class='hover:text-[#50b0ae]'>Blog</a>
+          <a href={getNavLink('/blog')} class="hover:text-[#50b0ae]">Blog</a>
         </li>
         <li>
-          <a href='/about' class='hover:text-[#50b0ae]'>About</a>
+          <a href={getNavLink('/about')} class="hover:text-[#50b0ae]">About</a>
         </li>
+        {
+          languages.map((lang) => (
+            <li class="uppercase">
+              <a
+                data-isactive={lang === language ? 'yes' : 'no'}
+                class={`lang-toggle hover:bg-gray-200 px-2 ${
+                  lang === language ? 'bg-gray-200' : ''
+                }`}
+                href={langSwitch[lang]}
+              >
+                {lang}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </div>
