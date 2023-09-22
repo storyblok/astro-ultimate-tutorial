@@ -1,5 +1,6 @@
 ---
-const { article } = Astro.props
+import { getTransLink } from '../utils/langs'
+const { language, article } = Astro.props
 ---
 
 <article class="column feature bg-gray-100 rounded">
@@ -16,7 +17,7 @@ const { article } = Astro.props
       {article.teaser}
     </p>
     <a
-      href={`/blog/${article.slug}`}
+      href={getTransLink(language, `/blog/${article.slug}`)}
       class="font-semibold text-blue-600 hover:underline"
       title="read more"
     >

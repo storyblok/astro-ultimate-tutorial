@@ -25,7 +25,7 @@ const articles = data.stories
           article.content.slug = article.slug
           return (
             <li>
-              <ArticleCard article={article.content} />
+              <ArticleCard language={language} article={article.content} />
             </li>
           )
         })
