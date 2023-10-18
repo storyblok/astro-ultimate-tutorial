@@ -1,1 +1,1 @@
-# The Storyblok Astro Ultimate Tutorial: Part 6
+# The Storyblok Astro Ultimate Tutorial: Part 7
