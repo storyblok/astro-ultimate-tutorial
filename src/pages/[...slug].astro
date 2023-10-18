@@ -4,6 +4,8 @@ import { useStoryblokApi } from '@storyblok/astro'
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import { languages } from '../utils/langs'
+import parseUrl from '../utils/parseUrl'
+import isPreview from '../utils/isPreview'
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi()
   const { data } = await storyblokApi.get('cdn/links', {
@@ -36,13 +38,15 @@ export async function getStaticPaths() {
   })
   return paths
 }
+const params = Astro.params
+let props = isPreview() ? parseUrl(params?.slug) : Astro.props
 
-const { slug, language, langSwitch } = Astro.props
+const { slug, language, langSwitch } = props
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get(
   `cdn/stories/${slug === undefined ? 'home' : slug}`,
   {
-    version: 'draft',
+    version: isPreview() ? 'draft' : 'published',
     resolve_relations: ['popular-articles.articles'],
     language,
   }

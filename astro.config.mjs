@@ -24,6 +24,7 @@ export default defineConfig({
     }),
     tailwind(),
   ],
+  output: process.env.IS_PREVIEW === 'true' ? 'server' : 'hybrid',
   vite: {
     plugins: [basicSsl()],
     server: {
