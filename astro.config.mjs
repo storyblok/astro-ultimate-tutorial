@@ -11,6 +11,7 @@ export default defineConfig({
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
+      bridge: env.STORYBLOK_IS_PREVIEW === 'yes',
       components: {
         page: 'storyblok/Page',
         feature: 'storyblok/Feature',
@@ -25,12 +26,14 @@ export default defineConfig({
     }),
     tailwind(),
   ],
-  output: process.env.IS_PREVIEW === 'true' ? 'server' : 'hybrid',
-  vite: {
-    plugins: [basicSsl()],
-    server: {
-      https: true,
+  output: env.STORYBLOK_IS_PREVIEW === 'yes' ? 'server' : 'hybrid',
+  ...(env.STORYBLOK_ENV === 'development' && {
+    vite: {
+      plugins: [basicSsl()],
+      server: {
+        https: true,
+      },
     },
-  },
+  }),
   adapter: vercel(),
 })
