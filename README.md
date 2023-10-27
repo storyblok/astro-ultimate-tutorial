@@ -41,3 +41,8 @@ You can switch between the different branches of this repository; there is one b
  - Live demo: [View on Netlify](https://part-6--storyblok-astro-ultimate-tutorial.netlify.app/)
  - Branch: [part-6](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-6)
  - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/174270)
+
+### Final part
+ - Tutorial: [Create a Preview Environment for Your Astro Website](https://www.storyblok.com/tp/create-a-preview-environment-for-your-astro-website)
+ - Branch: [part-7](https://github.com/storyblok/astro-ultimate-tutorial/tree/part-7)
+ - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/174270)
