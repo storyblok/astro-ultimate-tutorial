@@ -1,0 +1,30 @@
+---
+import { useStoryblokApi } from '@storyblok/astro'
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories/config', {
+  version: 'draft',
+  resolve_links: 'url',
+})
+const headerMenu = data?.story?.content?.header_menu
+---
+ 
+<header class="w-full h-24 bg-[#f7f6fd]">
+  <div class="container h-full mx-auto flex items-center justify-between">
+    <a href="/">
+      <h1 class="text-[#50b0ae] text-3xl font-bold">Storyblok Astro</h1>
+    </a>
+    <nav>
+      <ul class="flex space-x-8 text-lg font-bold">
+        {
+          headerMenu.map((menu) => (
+            <li>
+              <a href={`/${menu.link.cached_url}`} class="hover:text-[#50b0ae]">
+                {menu.link.story.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
