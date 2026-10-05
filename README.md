@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is no longer maintained.
+> For a current Astro + Storyblok starter, use [blueprint-core-astro](https://github.com/storyblok/blueprint-core-astro).
+
 # The Storyblok Astro Ultimate Tutorial
 
 In this tutorial series, you will learn how to build a headless website using Storyblok and Astro. Starting with the fundamental integration of Storyblok in Astro, more advanced functionalities are explained in bite-sized content pieces, such as dynamic page rendering, dynamic menus, custom components, multilingual content and more.
